@@ -135,9 +135,6 @@ def signal_2(df: pd.DataFrame, rsi_length: int = 14, arn_length: int = 25, rever
         else:
             reversal.append(0)
     df['reversal'] = pd.Series(reversal)
-    
-    #big trend
-
     return df
 
 
@@ -182,6 +179,6 @@ df = get_candles(symbol, timeframe, 4000)
 df = signal_2(df,17,18,30)
 #df.to_csv("t.csv")
 plot(df, symbol, timeframe)
-print(df)
+print(df.columns)
 
 # EMA10 & 15 cross + rsi backward check + chg%
